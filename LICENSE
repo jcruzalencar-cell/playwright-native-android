@@ -1,0 +1,42 @@
+# Software Open Pública (SOP)
+
+## Open Source License v1.1
+
+**Copyright © 2026 João Vitor Cruz Alencar**
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal with the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+---
+
+## 1. Attribution and Credit
+
+- This copyright notice and this license must be included in all copies or substantial portions of the Software.
+- Any derivative work, modification, or version of the Software must:
+  - Include a visible and clear reference to the original author (João Vitor Cruz Alencar)
+  - Maintain a changelog documenting significant modifications
+  - Clearly indicate which portions have been modified and by whom
+
+## 2. Distribution of Source Code
+
+- If the Software is distributed in compiled or binary form, a copy of the corresponding source code must be made available under the same terms of this license
+
+## 3. License Compatibility
+
+- Derivative works may be licensed under compatible open-source licenses (MIT, GPL, Apache 2.0, etc.), provided that credits to the original author are maintained
+
+## 4. Commercial and Non-Commercial Use
+
+- Both commercial and non-commercial use are explicitly permitted
+- There are no restrictions on the purpose or application of the Software
+
+## 5. Intellectual Property Rights
+
+- The original author retains all copyright rights
+- Modifiers do not acquire copyright over the original work, only over their specific modifications
+
+## 6. Disclaimer of Warranty
+
+The Software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and non-infringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Software or the use or other dealings in the Software.
+
+
+*For more information about the SOP license or to propose improvements, contact the copyright holder.*
