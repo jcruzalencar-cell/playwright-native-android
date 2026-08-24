@@ -1,14 +1,10 @@
-# Software Open Pública (SOP)
+# Playwright Native Android - Termux Repository
 
-The **Software Open Pública (SOP)** is an open-source license designed to keep software free to use, modify, and distribute, while strictly ensuring proper credit is given to the original author.
+Repositório APT oficial para o adaptador do **Playwright** voltado ao uso direto com o navegador nativo do Android (`com.android.chrome`) via daemon **ADB** local no Termux[span_0](start_span)[span_0](end_span)[span_1](start_span)[span_1](end_span), sem a necessidade de baixar pacotes pesados de Chromium para desktop.
 
-## Summary of Rules
-1. **Free Use & Commercial:** Anyone can use, modify, sell, or distribute the software.
-2. **Attribution:** Any modified or derivative versions must clearly and visibly maintain credit to the original author.
-3. **No Warranty:** Provided "as is", without warranty of any kind.
+---
 
-## How to use this license in your project
-To use the SOP license in your repository:
-1. Create a file named `LICENSE` in the root of your project.
-2. Copy the text from the `LICENSE` file of this repository into your file.
-3. Update the year and your name in the copyright notice.
+## 📦 Pacotes Disponíveis
+
+* **`playwright-native-android`**: Adaptador leve em Node.js que interage com o `playwright-core` e o ADB do sistema[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span).
+
