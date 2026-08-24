@@ -1,0 +1,16 @@
+Package: playwright-native-android
+Name: Playwright Native Android Adapter
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: João Vitor Cruz Alencar <joao@local>
+Depends: nodejs, android-tools, procps
+Description: Playwright adaptador para o navegador nativo do Android via ADB sem Chromium pesado.
+Filename: dists/termux/extras/binary-all/playwright-native-android_1.0.0_all.deb
+Size: 1608
+MD5Sum: 2c854aa45254f707cf54542357a4a496
+SHA1: b55683e54e0c63c3edd20f1c6f6b5eb769c7823c
+SHA256: 60b4ae167e687d4d71ef4d91bdebb08658a6f0c7224400b170a31cbb1bdb7b33
+SHA512: 6d8204a900875d5caf2ebbb3cb7276b3bbc8df68f25fc38b6e7202784381734ff4246a4b1479b2f7c89dec5259d16b7e2c4c709f3340cb11288642584f1c0525
+

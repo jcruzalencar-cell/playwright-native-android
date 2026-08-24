@@ -1,0 +1,3 @@
+data/data/com.termux/files/usr/lib/playwright-native/index.js                    playwright-native-android
+data/data/com.termux/files/usr/lib/playwright-native/package.json                playwright-native-android
+data/data/com.termux/files/usr/bin/playwright-android                            playwright-native-android
