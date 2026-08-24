@@ -1,0 +1,49 @@
+name: Atualizar Repositório APT
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.deb'
+      - 'input-debs/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar o Repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar o Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Instalar o Gerador do Repositório Termux
+        run: |
+          pip install termux-apt-repo
+
+      - name: Reconstruir Índices do APT
+        run: |
+          # Se houver pacotes soltos na raiz ou em input-debs, varre e recria a estrutura
+          # O termux-apt-repo lê os debs e gera a saída
+          mkdir -p input-debs
+          find . -maxdepth 1 -name "*.deb" -exec cp {} input-debs/ \;
+          
+          # Remove antigas pastas de distribuição para gerar limpo
+          rm -rf dists/ pool/
+          
+          termux-apt-repo input-debs .
+
+      - name: Enviar Alterações de Volta para o Repositório
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.io"
+          git add dists/ pool/ input-debs/
+          git status
+          git diff --staged --quiet || git commit -m "🤖 Atualização automática dos índices do APT via GitHub Actions"
+          git push
