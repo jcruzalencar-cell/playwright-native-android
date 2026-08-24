@@ -1,4 +1,4 @@
-name: Atualizar Repositório APT
+name: Atualizar Repositório APT com Múltiplos Pacotes
 
 on:
   push:
@@ -21,23 +21,24 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Instalar o Gerador do Repositório Termux
+      - name: Instalar Ferramenta do Repositório Termux
         run: |
           pip install termux-apt-repo
 
-      - name: Reconstruir Índices do APT
+      - name: Reconstruir Índices APT para Todos os Pacotes
         run: |
-          # Se houver pacotes soltos na raiz ou em input-debs, varre e recria a estrutura
-          # O termux-apt-repo lê os debs e gera a saída
           mkdir -p input-debs
-          find . -maxdepth 1 -name "*.deb" -exec cp {} input-debs/ \;
           
-          # Remove antigas pastas de distribuição para gerar limpo
+          # Move todos os .deb soltos na raiz para dentro de input-debs (se houver)
+          find . -maxdepth 1 -name "*.deb" -exec mv {} input-debs/ \;
+          
+          # Remove as pastas antigas para reconstruir os índices limpos com todos os pacotes reunidos
           rm -rf dists/ pool/
           
+          # Roda o gerador apontando para a pasta de entradas
           termux-apt-repo input-debs .
 
-      - name: Enviar Alterações de Volta para o Repositório
+      - name: Enviar Alterações Atualizadas para o GitHub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -45,5 +46,5 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.io"
           git add dists/ pool/ input-debs/
           git status
-          git diff --staged --quiet || git commit -m "🤖 Atualização automática dos índices do APT via GitHub Actions"
+          git diff --staged --quiet || git commit -m "🤖 Atualização automática: indexando múltiplos pacotes .deb"
           git push
